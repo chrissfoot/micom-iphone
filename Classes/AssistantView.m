@@ -1509,7 +1509,7 @@ UIColor *previousColor = (UIColor*)[sender backgroundColor]; \
 	const LinphonePushNotificationConfig * core_push_config = linphone_core_get_push_notification_config(LC);
 	
 	linphone_account_creator_set_pn_provider(account_creator, PROVIDER_NAME);
-	//extract ".remote" from core pn_param which is of the form : VABCD1234.org.linphone.phone.voip&remote
+	//extract ".remote" from core pn_param which is of the form : VABCD1234.org.citytalk.micom.voip&remote
 	NSString *formatedPnParam = [NSString stringWithUTF8String:linphone_push_notification_config_get_param(core_push_config)];
 	formatedPnParam = [formatedPnParam stringByReplacingOccurrencesOfString:@"voip&remote" withString:@"remote"];
 	linphone_account_creator_set_pn_param(account_creator, [formatedPnParam UTF8String]);

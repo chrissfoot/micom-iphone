@@ -33,6 +33,7 @@ target 'linphone' do
 		#License: https://github.com/SwipeCellKit/SwipeCellKit/blob/develop/LICENSE
 	pod 'EmojiPicker', :git => 'https://github.com/htmlprogrammist/EmojiPicker'
 		#License: https://github.com/htmlprogrammist/EmojiPicker/blob/main/LICENSE
+	pod 'Firebase'
 	all_pods
 
 end

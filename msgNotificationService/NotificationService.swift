@@ -23,7 +23,7 @@ import linphonesw
 import Firebase
 #endif
 
-var APP_GROUP_ID = "group.org.linphone.phone.msgNotification"
+var APP_GROUP_ID = "group.org.citytalk.micom.msgNotification"
 var LINPHONE_DUMMY_SUBJECT = "dummy subject"
 
 struct MsgData: Codable {
