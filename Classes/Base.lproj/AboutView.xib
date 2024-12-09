@@ -56,10 +56,6 @@
                             <rect key="frame" x="0.0" y="66" width="414" height="535"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_C.png" translatesAutoresizingMaskIntoConstraints="NO" id="fbO-x9-0Ue" userLabel="backgroundColor">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="262"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                </imageView>
                                 <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="wSQ-YD-dIQ" userLabel="logoImage">
                                     <rect key="frame" x="0.0" y="8" width="414" height="166"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -78,22 +74,21 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVO-4a-t1s">
+                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVO-4a-t1s">
                     <rect key="frame" x="0.0" y="66" width="414" height="719"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGe-ZS-scH" userLabel="topBar">
+                        <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGe-ZS-scH" userLabel="topBar">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_F.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vi5-Wh-iOm" userLabel="backgroundColor">
+                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_F.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vi5-Wh-iOm" userLabel="backgroundColor">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vX8-wO-ZEN" userLabel="dialerBackButton" customClass="UIIconButton">
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vX8-wO-ZEN" userLabel="dialerBackButton" customClass="UIIconButton">
                                     <rect key="frame" x="0.0" y="0.0" width="106" height="66"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     <accessibility key="accessibilityConfiguration" label="Add contact"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="106" id="jGP-mR-d1f"/>
+                                    </constraints>
                                     <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
                                     <state key="normal" image="back_default.png">
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,35 +99,65 @@
                                         <action selector="onDialerBackClick:" destination="-1" eventType="touchUpInside" id="vfB-jG-YPr"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKp-iH-ojJ" userLabel="titleLabel">
+                                <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKp-iH-ojJ" userLabel="titleLabel">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                     <color key="textColor" red="0.98766469955444336" green="0.27512490749359131" blue="0.029739789664745331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="Vi5-Wh-iOm" firstAttribute="top" secondItem="vX8-wO-ZEN" secondAttribute="top" id="7eg-CX-AKz"/>
+                                <constraint firstItem="Vi5-Wh-iOm" firstAttribute="centerY" secondItem="OGe-ZS-scH" secondAttribute="centerY" id="8RP-NT-RWD"/>
+                                <constraint firstItem="wKp-iH-ojJ" firstAttribute="leading" secondItem="OGe-ZS-scH" secondAttribute="leading" id="M7U-du-vJo"/>
+                                <constraint firstItem="Vi5-Wh-iOm" firstAttribute="trailing" secondItem="wKp-iH-ojJ" secondAttribute="trailing" id="WDm-uJ-DAY"/>
+                                <constraint firstItem="vX8-wO-ZEN" firstAttribute="top" secondItem="wKp-iH-ojJ" secondAttribute="top" id="ccO-Xe-A7T"/>
+                                <constraint firstItem="Vi5-Wh-iOm" firstAttribute="leading" secondItem="vX8-wO-ZEN" secondAttribute="leading" id="gP4-F7-opw"/>
+                                <constraint firstItem="Vi5-Wh-iOm" firstAttribute="centerX" secondItem="OGe-ZS-scH" secondAttribute="centerX" id="hbN-10-GHs"/>
+                                <constraint firstItem="wKp-iH-ojJ" firstAttribute="top" secondItem="OGe-ZS-scH" secondAttribute="top" id="i5q-fC-S3d"/>
+                                <constraint firstItem="wKp-iH-ojJ" firstAttribute="bottom" secondItem="Vi5-Wh-iOm" secondAttribute="bottom" id="nUG-87-ZDh"/>
+                                <constraint firstItem="Vi5-Wh-iOm" firstAttribute="leading" secondItem="wKp-iH-ojJ" secondAttribute="leading" id="yNh-7x-4vI"/>
+                                <constraint firstItem="Vi5-Wh-iOm" firstAttribute="bottom" secondItem="vX8-wO-ZEN" secondAttribute="bottom" id="zXd-2L-HgC"/>
+                            </constraints>
                         </view>
-                        <view clipsSubviews="YES" multipleTouchEnabled="YES" tag="6" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wvv-4f-Oa6">
+                        <view clipsSubviews="YES" multipleTouchEnabled="YES" tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wvv-4f-Oa6">
                             <rect key="frame" x="0.0" y="66" width="414" height="243"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_C.png" translatesAutoresizingMaskIntoConstraints="NO" id="UBx-Gi-qTi" userLabel="backgroundColor">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="152"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" tag="8" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="UhZ-5i-eU5" userLabel="logoImage">
-                                    <rect key="frame" x="7" y="0.0" width="157" height="152"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <imageView userInteractionEnabled="NO" tag="8" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="UhZ-5i-eU5" userLabel="logoImage">
+                                    <rect key="frame" x="81" y="52" width="280" height="152"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="157" id="z7D-Oz-MDU"/>
+                                    </constraints>
                                 </imageView>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="UhZ-5i-eU5" firstAttribute="top" secondItem="Wvv-4f-Oa6" secondAttribute="top" id="1xr-fB-Bax"/>
+                                <constraint firstAttribute="bottom" secondItem="UhZ-5i-eU5" secondAttribute="bottom" constant="91" id="r61-lg-h3q"/>
+                                <constraint firstItem="UhZ-5i-eU5" firstAttribute="leading" secondItem="Wvv-4f-Oa6" secondAttribute="leading" constant="7" id="yB1-2q-lMo"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="OGe-ZS-scH" firstAttribute="leading" secondItem="Wvv-4f-Oa6" secondAttribute="leading" id="AvP-yP-G72"/>
+                        <constraint firstAttribute="bottom" secondItem="Wvv-4f-Oa6" secondAttribute="bottom" constant="410" id="CNh-Jo-r6D"/>
+                        <constraint firstItem="OGe-ZS-scH" firstAttribute="trailing" secondItem="Wvv-4f-Oa6" secondAttribute="trailing" id="VJ2-RN-dGC"/>
+                        <constraint firstItem="OGe-ZS-scH" firstAttribute="top" secondItem="sVO-4a-t1s" secondAttribute="top" id="Vsi-Td-kJh"/>
+                        <constraint firstItem="OGe-ZS-scH" firstAttribute="centerX" secondItem="sVO-4a-t1s" secondAttribute="centerX" id="Yvl-Ij-j4h"/>
+                        <constraint firstItem="Wvv-4f-Oa6" firstAttribute="top" secondItem="sVO-4a-t1s" secondAttribute="top" constant="66" id="cxp-7b-z2H"/>
+                        <constraint firstItem="OGe-ZS-scH" firstAttribute="leading" secondItem="sVO-4a-t1s" secondAttribute="leading" id="nDH-f9-uNy"/>
+                        <constraint firstItem="Wvv-4f-Oa6" firstAttribute="top" secondItem="OGe-ZS-scH" secondAttribute="bottom" id="t0c-Jo-p6m"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="1393.5999999999999" y="223.08845577211397"/>
+            <constraints>
+                <constraint firstItem="sVO-4a-t1s" firstAttribute="top" secondItem="FcM-rg-Qrt" secondAttribute="top" constant="66" id="OpA-mx-XNY"/>
+                <constraint firstItem="sVO-4a-t1s" firstAttribute="centerX" secondItem="FcM-rg-Qrt" secondAttribute="centerX" id="jmZ-nq-kEc"/>
+                <constraint firstAttribute="bottom" secondItem="sVO-4a-t1s" secondAttribute="bottom" constant="111" id="kJe-OM-don"/>
+                <constraint firstItem="sVO-4a-t1s" firstAttribute="leading" secondItem="FcM-rg-Qrt" secondAttribute="leading" id="o1k-up-Myx"/>
+            </constraints>
+            <point key="canvasLocation" x="1392.753623188406" y="222.99107142857142"/>
         </view>
         <tapGestureRecognizer id="l7c-wq-pii" userLabel="onLinkTap">
             <connections>
@@ -143,7 +168,6 @@
     <resources>
         <image name="back_default.png" width="38.400001525878906" height="35.200000762939453"/>
         <image name="back_disabled.png" width="38.400001525878906" height="35.200000762939453"/>
-        <image name="color_C.png" width="2" height="2"/>
         <image name="color_E.png" width="2" height="2"/>
         <image name="color_F.png" width="2" height="2"/>
         <image name="splashscreen.png" width="533" height="240"/>

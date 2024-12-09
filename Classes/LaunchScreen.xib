@@ -13,27 +13,45 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_C.png" translatesAutoresizingMaskIntoConstraints="NO" id="xtr-QP-6We" userLabel="backgroundColor">
+                <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_C.png" translatesAutoresizingMaskIntoConstraints="NO" id="xtr-QP-6We" userLabel="backgroundColor">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
-                <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4JK-Mw-ZzG">
-                    <rect key="frame" x="87" y="191" width="200" height="285"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="4JK-Mw-ZzG">
+                    <rect key="frame" x="0.0" y="181" width="375" height="306"/>
                     <subviews>
-                        <imageView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="pz0-nR-x0f" userLabel="logoImage">
-                            <rect key="frame" x="-85" y="8" width="371" height="219"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <imageView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="splashscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="pz0-nR-x0f" userLabel="logoImage">
+                            <rect key="frame" x="10" y="8" width="355" height="258"/>
                         </imageView>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="pz0-nR-x0f" firstAttribute="top" secondItem="4JK-Mw-ZzG" secondAttribute="topMargin" id="VM6-YV-71P"/>
+                        <constraint firstAttribute="bottom" secondItem="pz0-nR-x0f" secondAttribute="bottom" constant="58" id="c7e-Sx-DtR"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="pz0-nR-x0f" secondAttribute="trailing" constant="2" id="dg4-rE-0kq"/>
+                        <constraint firstItem="pz0-nR-x0f" firstAttribute="leading" secondItem="4JK-Mw-ZzG" secondAttribute="leading" constant="10" id="xA2-HV-ssX"/>
+                    </constraints>
                 </view>
-                <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="P8D-kY-xHP" userLabel="bottomBarImage">
-                    <rect key="frame" x="127" y="656" width="119" height="11"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="P8D-kY-xHP" userLabel="bottomBarImage">
+                    <rect key="frame" x="127" y="665" width="119" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="119" id="hqu-nr-fxO"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xtr-QP-6We" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="25B-R7-lUD"/>
+                <constraint firstAttribute="trailing" secondItem="4JK-Mw-ZzG" secondAttribute="trailing" id="ERE-Gb-2AU"/>
+                <constraint firstItem="xtr-QP-6We" firstAttribute="leading" secondItem="4JK-Mw-ZzG" secondAttribute="leading" id="HS8-oE-Icd"/>
+                <constraint firstItem="xtr-QP-6We" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HkN-eB-rVF"/>
+                <constraint firstItem="4JK-Mw-ZzG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HrJ-1Z-pFd"/>
+                <constraint firstItem="4JK-Mw-ZzG" firstAttribute="centerY" secondItem="xtr-QP-6We" secondAttribute="centerY" id="KZ9-uC-0as"/>
+                <constraint firstItem="xtr-QP-6We" firstAttribute="trailing" secondItem="4JK-Mw-ZzG" secondAttribute="trailing" id="Nrw-94-S2O"/>
+                <constraint firstItem="xtr-QP-6We" firstAttribute="bottom" secondItem="P8D-kY-xHP" secondAttribute="bottom" id="ZSM-Gt-zub"/>
+                <constraint firstItem="P8D-kY-xHP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="127" id="pJC-63-q2Q"/>
+                <constraint firstItem="4JK-Mw-ZzG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="t9r-QX-zf2"/>
+                <constraint firstItem="P8D-kY-xHP" firstAttribute="top" secondItem="4JK-Mw-ZzG" secondAttribute="bottom" constant="1800" id="vT4-1X-bAb"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="345.6521739130435" y="819.70108695652175"/>
@@ -42,6 +60,6 @@
     <resources>
         <image name="color_A.png" width="2" height="2"/>
         <image name="color_C.png" width="2" height="2"/>
-        <image name="splashscreen.png" width="852.79998779296875" height="617.5999755859375"/>
+        <image name="splashscreen.png" width="533" height="240"/>
     </resources>
 </document>

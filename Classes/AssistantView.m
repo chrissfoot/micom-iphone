@@ -323,10 +323,10 @@ static UICompositeViewDescription *compositeDescription = nil;
 }
 
 - (void)enableWelcomeViewButtons {
-	BOOL acceptTerms = [LinphoneManager.instance lpConfigBoolForKey:@"accept_terms" withDefault:FALSE];
-	UIImage *image = acceptTerms ? [UIImage imageNamed:@"checkbox_checked.png"] : [UIImage imageNamed:@"checkbox_unchecked.png"];
-	[_acceptButton setImage:image forState:UIControlStateNormal];
-	_gotoRemoteProvisioningButton.enabled = _gotoLinphoneLoginButton.enabled = _gotoCreateAccountButton.enabled = _gotoLinphoneSpecificFeatureWarningButton.enabled = acceptTerms;
+	//BOOL acceptTerms = [LinphoneManager.instance lpConfigBoolForKey:@"accept_terms" withDefault:FALSE];
+	//UIImage *image = acceptTerms ? [UIImage imageNamed:@"checkbox_checked.png"] : [UIImage imageNamed:@"checkbox_unchecked.png"];
+	//[_acceptButton setImage:image forState:UIControlStateNormal];
+	//_gotoRemoteProvisioningButton.enabled = _gotoLinphoneLoginButton.enabled = _gotoCreateAccountButton.enabled = _gotoLinphoneSpecificFeatureWarningButton.enabled = acceptTerms;
 }
 
 + (NSString *)errorForLinphoneAccountCreatorPhoneNumberStatus:(LinphoneAccountCreatorPhoneNumberStatus)status {
@@ -749,10 +749,11 @@ static UICompositeViewDescription *compositeDescription = nil;
 			 _remoteProvisioningLoginView
 		 ]) {
 		[AssistantView cleanTextField:view];
+        UIAssistantTextField *atf =
+            (UIAssistantTextField *)[self findView:ViewElement_Domain inView:view ofType:UIAssistantTextField.class];
+        atf.text = @"[domain].micom2.co.uk";
 #if DEBUG
-		UIAssistantTextField *atf =
-			(UIAssistantTextField *)[self findView:ViewElement_Domain inView:view ofType:UIAssistantTextField.class];
-		atf.text = @"test.linphone.org";
+		atf.text = @"citytalkgroup.micom2.co.uk";
 #endif
 	}
 	phone_number_length = 0;
@@ -1677,17 +1678,14 @@ UIColor *previousColor = (UIColor*)[sender backgroundColor]; \
 		
 		linphone_account_params_set_identity_address(accountParams, addr);
 		// set transport
-		UISegmentedControl *transports = (UISegmentedControl *)[self findView:ViewElement_Transport
-																	   inView:self.contentView
-																	   ofType:UISegmentedControl.class];
-		if (transports) {
-			NSString *type = [transports titleForSegmentAtIndex:[transports selectedSegmentIndex]];
-			LinphoneAddress *transportAddr = linphone_address_new([NSString stringWithFormat:@"sip:%s;transport=%s", domain.UTF8String, type.lowercaseString.UTF8String].UTF8String);
+		
+			NSString *type = @"TLS";
+			LinphoneAddress *transportAddr = linphone_address_new([NSString stringWithFormat:@"sip:%s:5081;transport=%s", domain.UTF8String, type.lowercaseString.UTF8String].UTF8String);
 			linphone_account_params_set_routes_addresses(accountParams, bctbx_list_new(transportAddr));
-			linphone_account_params_set_server_addr(accountParams, [NSString stringWithFormat:@"%s;transport=%s", domain.UTF8String, type.lowercaseString.UTF8String].UTF8String);
+			linphone_account_params_set_server_addr(accountParams, [NSString stringWithFormat:@"%s:5081;transport=%s", domain.UTF8String, type.lowercaseString.UTF8String].UTF8String);
 			
 			linphone_address_unref(transportAddr);
-		}
+		
 		linphone_account_params_set_publish_enabled(accountParams, FALSE);
 		linphone_account_params_set_register_enabled(accountParams, TRUE);
 		
