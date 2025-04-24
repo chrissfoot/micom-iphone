@@ -1401,7 +1401,7 @@ void popup_link_account_cb(LinphoneAccountCreator *creator, LinphoneAccountCreat
 	linphone_core_start([LinphoneManager getLc]);
 	
 	[self configurePushProviderForAccounts];
-	[self enableLinphoneAccountSpecificSettings];
+	//[self enableLinphoneAccountSpecificSettings];
 }
 
 - (void)createLinphoneCore {
@@ -1488,7 +1488,7 @@ void popup_link_account_cb(LinphoneAccountCreator *creator, LinphoneAccountCreat
 	libmscodec2_init(f);
 
 	linphone_core_reload_ms_plugins(theLinphoneCore, NULL);
-	[self migrationAllPost];
+	//[self migrationAllPost];
 	
 	linphone_core_enable_record_aware(theLinphoneCore, true); //force record aware enable
 

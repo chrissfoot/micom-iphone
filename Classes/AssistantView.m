@@ -556,7 +556,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	} else
 		[self displayAssistantConfigurationError];
 	
-	[LinphoneManager.instance migrationPerAccount];
+	//[LinphoneManager.instance migrationPerAccount];
 		
 	linphone_config_sync(LinphoneManager.instance.configDb);
 	
